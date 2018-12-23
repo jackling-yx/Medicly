@@ -1,0 +1,8 @@
+<h2>Your List of Appointments:</h2>
+
+<ul>
+  <% @appointments.each do |appointment| %>
+  <li> <%= link_to appointment, appointment_path(appointment) %>
+  </li>
+  <% end %>
+</ul>

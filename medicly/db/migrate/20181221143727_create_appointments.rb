@@ -5,6 +5,7 @@ class CreateAppointments < ActiveRecord::Migration[5.2]
       t.integer :patient_id
       t.integer :appointment_type_id
       t.string :note
+      t.date :appointment_date
 
       t.timestamps
     end

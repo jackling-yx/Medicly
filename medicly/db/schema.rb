@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_144056) do
     t.integer "patient_id"
     t.integer "appointment_type_id"
     t.string "note"
+    t.date "appointment_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
