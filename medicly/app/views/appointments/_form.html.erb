@@ -2,16 +2,12 @@
 
 <%= form_for @appointment do |f| %>
 
-<p>  <%= f.label "Name:" %>
-  <%= f.text_field :name %>
+<p> <%= f.label "Doctor:" %>
+    <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
 </p>
 <p>
-  <%= f.label "Speciality:" %>
-  <%= f.text_field :speciality %>
-</p>
-<p>
-  <%= f.label "Post Code:" %>
-  <%= f.text_field :post_code %>
+  <%= f.label "Date:" %>
+  <%= f.date_field :appointment_date %>
 </p>
 <p>
   <%= f.submit %>

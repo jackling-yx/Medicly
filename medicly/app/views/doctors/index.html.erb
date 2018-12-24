@@ -1,8 +1,12 @@
 <h2>Your List of Doctors:</h2>
 
+<p><%= link_to 'View Your Appointments', appointments_path %></p>
+
+<p><%= link_to 'Create a new Doctor', new_doctor_path %></p>
+
 <ul>
   <% @doctors.each do |doctor| %>
-  <li> <%= link_to doctor, doctor_path(doctor) %>
+  <li> <%= link_to doctor.name, doctor_path(doctor) %>
   </li>
   <% end %>
 </ul>

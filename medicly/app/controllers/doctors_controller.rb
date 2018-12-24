@@ -28,7 +28,7 @@ class DoctorsController < ApplicationController
 
     def update
       if @doctor.valid?
-        @doctor.save
+        @doctor.update(doctor_params)
         redirect_to doctor_path(@doctor)
       else
         flash[:errors] = @doctor.errors.full_messages

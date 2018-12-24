@@ -9,12 +9,13 @@ class AppointmentsController < ApplicationController
     end
 
     def new
+      @appointment = Appointment.new
     end
 
     def create
       @appointment = Appointment.new(appointment_params)
       if @appointment.valid?
-        @appointment.save
+        @appointment.save(appointment_params)
         redirect_to appointment_path(@appointment)
       else
         flash[:errors] = @appointment.errors.full_messages
@@ -27,7 +28,7 @@ class AppointmentsController < ApplicationController
 
     def update
       if @appointment.valid?
-        @appointment.save
+        @appointment.update(appointment_params)
         redirect_to appointment_path(@appointment)
       else
         flash[:errors] = @appointment.errors.full_messages
