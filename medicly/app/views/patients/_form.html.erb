@@ -1,0 +1,26 @@
+
+<%= form_for @patient do |f| %>
+
+<p>  <%= f.label "Full Name:" %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label "Age:" %>
+  <%= f.number_field :age %>
+</p>
+<p>
+  <%= f.label "D.O.B:" %>
+  <%= f.date_select :birth_date %>
+</p>
+<p>
+  <%= f.label "Gender:" %>
+  <%= f.text_field :gender %>
+</p>
+<p>
+  <%= f.label "Allergies:" %>
+  <%= f.text_field :allergies %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+  <% end %>

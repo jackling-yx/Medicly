@@ -32,7 +32,7 @@ class DoctorsController < ApplicationController
         redirect_to doctor_path(@doctor)
       else
         flash[:errors] = @doctor.errors.full_messages
-        render :new
+        render :edit
       end
     end
 
