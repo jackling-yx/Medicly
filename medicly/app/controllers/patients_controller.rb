@@ -2,6 +2,7 @@ class PatientsController < ApplicationController
 before_action :find_patient, only: [:show, :edit, :update, :destroy]
 
   def index
+    @patients = Patient.all
   end
 
   def show
@@ -31,7 +32,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy]
       redirect_to patient_path(@patient)
     else
       flash[:errors] = @patient.errors.full_messages
-      render :new
+      render :edit
     end
   end
 
