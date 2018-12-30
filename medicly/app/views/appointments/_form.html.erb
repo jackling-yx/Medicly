@@ -6,8 +6,16 @@
     <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
 </p>
 <p>
+  <%= f.label "Appointment Type:" %>
+  <%= f.collection_select(:appointment_type_id, AppointmentType.all, :id, :name) %>
+</p>
+<p>
   <%= f.label "Date:" %>
   <%= f.date_field :appointment_date %>
+</p>
+<p>
+  <%= f.label "Notes:" %>
+  <%= f.text_area :note %>
 </p>
 <p>
   <%= f.submit %>
