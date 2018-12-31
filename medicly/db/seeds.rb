@@ -53,9 +53,9 @@ appointments = [
 appointments.each {|appointment| Appointment. create(appointment)}
 
 appointment_types = [
-  {name: 'general check-up/booked appointment'},
-  {name: 'injection'},
-  {name: 'emergency'}
+  {name: 'General Check-up/Booked Appointment'},
+  {name: 'Injection'},
+  {name: 'Emergency'}
 ]
 
 appointment_types.each {|appointment_type| AppointmentType. create(appointment_type)}
