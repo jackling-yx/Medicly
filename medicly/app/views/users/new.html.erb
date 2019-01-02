@@ -1,0 +1,13 @@
+<h2>Sign Up</h2>
+<%= form_for @user, :url => '/signup' do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+  <br>
+  <%= f.label :password%>
+  <%= f.password_field :password%>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<br>
+  <p>Already have an account?</p><%= link_to "Login!", '/login' %>

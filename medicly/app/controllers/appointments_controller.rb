@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :find_appointment, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
 
     def index
       @appointments = Appointment.all
@@ -49,5 +50,9 @@ class AppointmentsController < ApplicationController
 
     def appointment_params
       params.require(:appointment).permit(:doctor_id, :patient_id, :appointment_type_id, :note, :appointment_date)
+    end
+
+    def require_login
+      redirect_to sessions_new_path unless session.include?(:name)
     end
 end

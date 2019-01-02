@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <h1>Medicly</h1>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |e| %>
+          <p style="color: red;">
+            <%= e %>
+          </p>
+        <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

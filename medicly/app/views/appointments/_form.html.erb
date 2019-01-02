@@ -2,6 +2,10 @@
 
 <%= form_for @appointment do |f| %>
 
+<p>
+  <%= f.label "Patient" %>
+  <%= f.collection_select(:patient_id, Patient.all, :id, :name) %>
+</p>
 <p> <%= f.label "Doctor:" %>
     <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
 </p>

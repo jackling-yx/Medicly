@@ -44,7 +44,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy]
 private
 
   def find_patient
-    @patient = Patient.all.find(params[:id])
+    @patient = Patient.find(params[:id])
   end
 
   def patient_params
