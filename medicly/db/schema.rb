@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_01_02_093807) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "doctor_id"
-    t.integer "patient_id"
+    t.integer "user_id"
     t.integer "appointment_type_id"
     t.string "note"
     t.date "appointment_date"
@@ -36,19 +36,13 @@ ActiveRecord::Schema.define(version: 2019_01_02_093807) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "patients", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.string "name"
-    t.integer "age"
     t.date "birth_date"
     t.string "gender"
     t.string "allergies"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

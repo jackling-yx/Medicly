@@ -7,10 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Medicly</h1>
+    <div class="responsive-table">
+    <%= image_tag 'medicly.png', :size => '416x288' %><br>
+    <%= session %>
+    <%= session[:user_id] %>
+
+    <%= button_to 'LOG OOOOT', logout_path %>
+
+
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
           <p style="color: red;">
@@ -19,5 +27,6 @@
         <% end %>
     <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>

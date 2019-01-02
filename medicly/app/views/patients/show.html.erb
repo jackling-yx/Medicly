@@ -1,13 +1,13 @@
-<h3><%= @patient.name %></h3>
+<h3><%= @user.name %></h3>
 
-<p><strong>Age: </strong><%= @patient.age %></p>
+<p><strong>Age: </strong><%= ((Time.zone.now - @user.birth_date.to_time) / 1.year.seconds).floor %></p>
 
-<p><strong>D.O.B: </strong> <%= @patient.birth_date %></p>
+<p><strong>D.O.B: </strong> <%= @user.birth_date %></p>
 
-<p><strong>Gender: </strong> <%= @patient.gender %></p>
+<p><strong>Gender: </strong> <%= @user.gender %></p>
 
-<p><strong>Allergies: </strong><%= @patient.allergies %></p>
+<p><strong>Allergies: </strong><%= @user.allergies %></p>
 
 <p><%= link_to 'Book an Appointment', new_appointment_path %></p>
 
-<p><%= link_to 'Change your details', edit_patient_path %></p>
+<p><%= link_to 'Change your details', edit_user_path %></p>

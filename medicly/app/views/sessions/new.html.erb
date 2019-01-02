@@ -1,13 +1,12 @@
-<h2>Login:</h2>
-
 <%= form_tag login_path do %>
-  <%= label_tag :name%>
-  <%= text_field_tag :name%>
-  <br>
+  <p><%= label_tag :username%>
+  <%= text_field_tag :username%>
+  </p>
+  <p>
   <%= label_tag :password%>
   <%= password_field_tag :password%>
-  <br>
+  </p>
   <%= submit_tag "Login" %>
 <% end %>
 <br>
-  <p>Don't have an account?</p><%= link_to "Sign Up!", '/signup' %>
+  <p>Don't have an account?</p><button><%= link_to "Sign Up!", '/signup' %></button>

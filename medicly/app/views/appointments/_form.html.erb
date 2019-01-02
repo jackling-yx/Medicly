@@ -3,8 +3,8 @@
 <%= form_for @appointment do |f| %>
 
 <p>
-  <%= f.label "Patient" %>
-  <%= f.collection_select(:patient_id, Patient.all, :id, :name) %>
+  <%= f.label "User" %>
+  <%= @user.name %>
 </p>
 <p> <%= f.label "Doctor:" %>
     <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>

@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  background-color: #161D2B;
+  color:#F9F2DC;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+
+.responsive-table{
+  width: 100%;
+  text-align: center;
+}

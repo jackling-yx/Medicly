@@ -1,10 +1,6 @@
-<h2>Sign up as a Patient:</h2>
+<h2>Change your details here:</h2>
 
-<%= form_for @user, :url => '/signup' do |f| %>
-  <p>
-    <%= f.label :username, "Username:"%>
-    <%= f.text_field :username%>
-  </p>
+<%= form_for @user do |f| %>
   <p>
     <%= f.label :password, "Password:"%>
     <%= f.password_field :password%>
@@ -26,9 +22,6 @@
     <%= f.text_field :allergies %>
   </p>
   <p>
-    <%= f.submit "Sign Up" %>
+    <%= f.submit "Edit" %>
   </p>
 <% end %>
-
-<br>
-  <p>Already have an account?</p><button><%= link_to "Login!", '/login' %></button>

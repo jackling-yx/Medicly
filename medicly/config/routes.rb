@@ -2,17 +2,16 @@ Rails.application.routes.draw do
   resources :appointment_types
   resources :doctors
   resources :appointments
-  resources :patients
-
+  resources :users
   # get 'sessions/new'
 
-  root 'patients#index'
 
 #user management
 
   get '/signup', to: 'users#new', as:'signup'
   post '/signup', to: 'users#create'
-  get '/users/:id', to: 'users#show', as: 'user'
+  get '/users/:id', to: 'users#show'
+  
 
 #session management
   get '/login' => 'sessions#new'

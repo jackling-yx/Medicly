@@ -11,6 +11,9 @@ class AppointmentsController < ApplicationController
 
     def new
       @appointment = Appointment.new
+      # @user = User.find(params[:id])
+      @user = User.find_by(session[:username])
+      # byebug
     end
 
     def create
