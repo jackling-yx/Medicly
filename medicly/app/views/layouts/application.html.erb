@@ -16,8 +16,9 @@
     <%= session %>
     <%= session[:user_id] %>
 
-    <%= button_to 'LOG OOOOT', logout_path %>
-
+    <% if session[:user_id] %>
+      <%= button_to 'LOG OOOOT', logout_path %>
+    <% end %>
 
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
