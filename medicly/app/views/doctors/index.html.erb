@@ -1,9 +1,10 @@
 <h2>Your List of Doctors:</h2>
 
-<p><%= link_to 'View Your Appointments', appointments_path, :class=>'fade-btn' %></p>
-
 <p><%= link_to 'Create a new Doctor', new_doctor_path, :class=>'fade-btn' %></p>
 
   <% @doctors.each do |doctor| %>
-  <p><%= link_to doctor.name, doctor_path(doctor), :class=>'fade-btn' %></p>
+  <p><%= link_to doctor.name, doctor_path(doctor) %></p>
   <% end %>
+
+
+  <p><%= link_to 'View Your Appointments', appointments_path, :class=>'fade-btn' %></p>

@@ -1,0 +1,13 @@
+<div class="responsive-table">
+<%= image_tag 'medicly.png', :size => '416x288' %><br>
+
+
+
+<p>Welcome to your personal medical record.</p>
+
+<p>Keep track of all your doctors and medical history in one place. </p>
+<br>
+<% if !session[:user_id] %>
+<%= link_to "Login", '/login', :class=>'fade-btn' %> <%= link_to "Sign Up", '/signup', :class=>'fade-btn' %>
+<% end %>
+</div>

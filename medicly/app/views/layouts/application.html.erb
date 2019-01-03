@@ -13,7 +13,7 @@
   <body>
     <!-- Navigation Bar -->
 
-    <nav class="navbar navbar-expand-lg" style="background-color:#161d2b;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#161d2b;">
        <a class="navbar-brand" href="/home"><%= image_tag 'mediclylogo.png' %></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -22,16 +22,18 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
            <li class="nav-item active">
-             <a class="nav-link" style="color:#f9f2dc;" href="">My Profile <span class="sr-only">(current)</span></a>
+             <a class="nav-link" style="color:#f9f2dc;" href="/users/<%= current_user.id %>">My Profile <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" style="color:#f9f2dc;" href="#">Doctors</a>
+             <a class="nav-link" style="color:#f9f2dc;" href="/doctors">Doctors</a>
            </li>
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" style="color:#f9f2dc;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <a class="nav-link dropdown-toggle" style="color:#f9f2dc;" href="/appointments" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Appointments
              </a>
              <div class="dropdown-menu" style="color:#161d2b;" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" style="color:#161d2b;" href="/appointments">All Appointments</a>
+               <div class="dropdown-divider"></div>
                <a class="dropdown-item" style="color:#161d2b;" href="#">General Appointments</a>
                <a class="dropdown-item" style="color:#161d2b;" href="#">Vaccinations</a>
                <a class="dropdown-item" style="color:#161d2b;" href="#">Emergency</a>
@@ -39,26 +41,17 @@
            </li>
          </ul>
          <% if session[:user_id] %>
-         <form class="form-inline my-2 my-lg-0">
-           <button class="btn btn-outline-success my-2 my-sm-0" a href="/logout">Logout</button>
-         </form>
+         <div class="logout">
+           <%= button_to 'Log Out', logout_path, :class => "fade-btn" %>
+         </div>
          <% end %>
        </div>
      </nav>
 
     <!-- End of Navigation Bar -->
-
-    <div class="logout">
-      <% if session[:user_id] %>
-        <%= button_to 'Log Out', logout_path, :class => "fade-btn" %>
-      <% end %>
-    </div>
-
-
-
+<br><br><br><br><br>
     <div class="responsive-table">
-    <%= image_tag 'medicly.png', :size => '416x288' %><br>
-  
+
 
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>

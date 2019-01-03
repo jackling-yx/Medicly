@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :doctors
   resources :appointments
   resources :users
-
 #user management
 
   get '/signup', to: 'users#new', as:'signup'
@@ -12,9 +11,15 @@ Rails.application.routes.draw do
 
 
 #session management
+  get '/home' => 'sessions#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
+
+#appointments management
+  get '/general-appointment' => 'appointments#show'
+  get '/vaccination' => 'appointments#show'
+  get '/emergency' => 'appointments#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,7 +2,7 @@
 
 
 <% @appointments.each do |appointment| %>
-  <p> <%= link_to appointment.appointment_date, appointment_path(appointment) %></p>
+  <p><%= appointment.appointment_type.name %> | <%= link_to appointment.appointment_date, appointment_path(appointment) %></p>
 <% end %>
 <br>
 

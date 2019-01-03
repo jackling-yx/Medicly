@@ -1,38 +1,45 @@
 class AppointmentsController < ApplicationController
   before_action :find_appointment, only: [:show, :edit, :update, :destroy]
+  # before_action -> {authorized_for(@appointment)}
   before_action :require_login
 
     def index
-      @appointments = Appointment.all
+      @appointments = Appointment.where(user_id: current_user.id)
     end
 
     def show
+      authorized_for(@appointment)
       @doctor = @appointment.doctor
+      @user = @appointment.user
     end
 
     def new
       @appointment = Appointment.new
+      @appointment.user = current_user
+      authorized_for(@appointment)
       @user = current_user
     end
 
     def create
-
-      @appointment = Appointment.new(appointment_params)
-      @user = current_user
-      if @appointment.valid?
-        @appointment.save(appointment_params)
-        redirect_to appointment_path(@appointment)
-      else
-        flash[:errors] = @appointment.errors.full_messages
-        render :new
-      end
+        @appointment = Appointment.new(appointment_params)
+        authorized_for(@appointment)
+        @user = current_user
+          if @appointment.valid?
+            @appointment.save(appointment_params)
+            redirect_to appointment_path(@appointment)
+          else
+            flash[:errors] = @appointment.errors.full_messages
+            render :new
+          end
     end
 
     def edit
+      authorized_for(@appointment)
       @user = current_user
     end
 
     def update
+      authorized_for(@appointment)
       @user = current_user
       if @appointment.valid?
         @appointment.update(appointment_params)
@@ -44,6 +51,7 @@ class AppointmentsController < ApplicationController
     end
 
     def destroy
+      authorized_for(@appointment)
       @appointment.destroy
       redirect_to appointments_path
     end

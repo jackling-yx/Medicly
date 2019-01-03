@@ -1,0 +1,10 @@
+<h2>Your General Appointments:</h2>
+
+<% @appointments.select do |appointment| appointment.appointment_type_id == 1 %>
+  <p> <%= link_to appointment.appointment_date, appointment_path(appointment) %></p>
+<% end %>
+<br>
+
+<p><%= link_to 'View Doctors', doctors_path, :class=>'fade-btn' %></p>
+
+<p><%= link_to 'Create a new Appointment', new_appointment_path, :class=>'fade-btn' %></p>
