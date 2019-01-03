@@ -11,14 +11,26 @@
   </head>
 
   <body>
+
+
+
+    <!--    <ul  style="background-color:#F9F2DC; list-style-type:none; margin: 0; padding:0;">
+          <li style="float :left;"><a href="default.asp" style="text-decoration:none; color:#161D2B ;display: block; padding:8px; background-color:#F9F2DC">Profile</a></li>
+          <li style="float :left;"><a href="news.asp" style="text-decoration:none; color:#161D2B ;display: block; padding:8px; background-color:#F9F2DC">Doctors</a></li>
+          <li style="float :left;"><a href="contact.asp" style="text-decoration:none; color:#161D2B ;display: block; padding:8px; background-color:#F9F2DC">Appointments</a></li>
+        </ul> -->
+
+
+    <div class="logout">
+      <% if session[:user_id] %>
+        <%= button_to 'Log Out', logout_path, :class => "fade-btn" %>
+      <% end %>
+    </div>
+
     <div class="responsive-table">
     <%= image_tag 'medicly.png', :size => '416x288' %><br>
     <%= session %>
     <%= session[:user_id] %>
-
-    <% if session[:user_id] %>
-      <%= button_to 'LOG OOOOT', logout_path %>
-    <% end %>
 
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>

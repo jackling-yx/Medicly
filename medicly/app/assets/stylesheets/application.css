@@ -20,9 +20,31 @@ body{
   font-family: 'Rubik', sans-serif;
 }
 
+p{
+  font-size: 18px;
+}
 
+.logout{
+  text-align: right;
+}
 
 .responsive-table{
   width: 100%;
   text-align: center;
 }
+
+.fade-btn {
+  background-color: #F9F2DC;
+  border: none;
+  border-radius: 5px;
+  color: #161D2B;
+  padding: 8px 18px;
+  text-align: center;
+  font-size: 12px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.fade-btn:hover {opacity: 0.6}

@@ -6,7 +6,7 @@
   <%= label_tag :password%>
   <%= password_field_tag :password%>
   </p>
-  <%= submit_tag "Login" %>
+  <%= submit_tag "Login", :class=>'fade-btn' %>
 <% end %>
 <br>
-  <p>Don't have an account?</p><button><%= link_to "Sign Up!", '/signup' %></button>
+  <p>Don't have an account?</p><%= link_to "Sign Up!", '/signup', :class=>'fade-btn' %>

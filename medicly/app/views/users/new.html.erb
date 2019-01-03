@@ -26,9 +26,9 @@
     <%= f.text_field :allergies %>
   </p>
   <p>
-    <%= f.submit "Sign Up" %>
+    <%= f.submit "Sign Up", :class=>'fade-btn' %>
   </p>
 <% end %>
-
 <br>
-  <p>Already have an account?</p><button><%= link_to "Login!", '/login' %></button>
+
+  <p>Already have an account? <%= link_to "Login here", '/login', :class=>'fade-btn' %></p>

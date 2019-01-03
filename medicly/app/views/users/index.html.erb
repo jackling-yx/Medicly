@@ -1,9 +1,9 @@
 <h2>Welcome, <%= session[:name].capitalize %></h2>
 
-<p><button><%= link_to 'View your Appointments', appointments_path %></button></p>
+<p><%= link_to 'View your Appointments', appointments_path, :class=>'fade-btn' %></p>
 
-<p><button><%= link_to 'Book an Appointment', new_appointment_path %></button></p>
+<p><%= link_to 'Book an Appointment', new_appointment_path, :class=>'fade-btn' %></p>
 
-<p><button><%= link_to 'View your Doctors', doctors_path %></button></p>
+<p><%= link_to 'View your Doctors', doctors_path, :class=>'fade-btn' %></p>
 
-<p><button><%= link_to 'See your Details', user_path %></button></p>
+<p><%= link_to 'See your Details', user_path, :class=>'fade-btn' %></p>

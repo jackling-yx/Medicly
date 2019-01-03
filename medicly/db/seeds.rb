@@ -27,7 +27,7 @@ doctors.each {|doctor| Doctor. create(doctor)}
 users = [
   {username: 'ljiscool', password: 'ilovecake', name: 'Louis Jackson', birth_date: "2002-10-02", gender: 'male', allergies: 'ibuprofen'},
   {username: 'rdawson', password: 'dawsonr', name: 'Ronald Dawson', birth_date: "1983-02-17", gender: 'male', allergies: 'nuts'},
-  {username: 'alessa', password: '2cool4school', name: 'Alessandra Lake', birth_date: "1964-12-26", gender: 'female', allergies: 'none'},
+  {username: 'alessa', password: '2cool4school', name: 'Alessandra Lake', birth_date: "1964-12-26", gender: 'female', allergies: ''},
 ]
 
 users.each {|user| User. create(user)}
@@ -48,8 +48,8 @@ appointments = [
 appointments.each {|appointment| Appointment. create(appointment)}
 
 appointment_types = [
-  {name: 'General Check-up/Booked Appointment'},
-  {name: 'Injection'},
+  {name: 'General Check-up'},
+  {name: 'Vaccination'},
   {name: 'Emergency'}
 ]
 
