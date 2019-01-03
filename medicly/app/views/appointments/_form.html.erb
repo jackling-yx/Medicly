@@ -1,10 +1,11 @@
 
 <%= form_for @appointment do |f| %>
 
-<p>
-  <%= f.label :username, "Name:" %>
-  <!--something related to current user's name-->
-</p>
+<strong><h2>
+  <%= current_user[:name]  %>
+</h2></strong>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
 <p> <%= f.label "Doctor:" %>
     <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
 </p>

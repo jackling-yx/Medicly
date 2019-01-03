@@ -24,9 +24,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authorized_for(user_id)
-    if authorized? && current_user.id != user_id.to_i
-      flash[:authorized] = "You must be logged in to see this page"
+  def authorized_for(target_user_id)
+    if authorized? && current_user.id != target_user_id.to_i
+      flash[:authorized] = "You are not authorised to view that page! 🙈"
       redirect_to current_user
     end
   end

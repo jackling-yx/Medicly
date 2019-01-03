@@ -1,9 +1,9 @@
-<h3>Appointment with <%= @doctor_id.name %>
+<h4>Appointment with <%= @doctor.name %></h4>
 
   <p>At: <%= @appointment.appointment_date %></p>
 
-<h3>Notes from Appointment:</h3>
-<p><%= @note %></p>
+<h4>Notes from Appointment:</h4>
+<p><%= @appointment.note %></p>
 
 <p><%= link_to 'Edit this Appointment', edit_appointment_path, :class=>'fade-btn' %></p>
 

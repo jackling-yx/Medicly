@@ -1,13 +1,11 @@
 <h2>Your List of Appointments:</h2>
 
+
+<% @appointments.each do |appointment| %>
+  <p> <%= link_to appointment.appointment_date, appointment_path(appointment) %></p>
+<% end %>
+<br>
+
 <p><%= link_to 'View Doctors', doctors_path, :class=>'fade-btn' %></p>
 
 <p><%= link_to 'Create a new Appointment', new_appointment_path, :class=>'fade-btn' %></p>
-
-
-<ul>
-  <% @appointments.each do |appointment| %>
-  <li> <%= link_to appointment, appointment_path(appointment) %>
-  </li>
-  <% end %>
-</ul>

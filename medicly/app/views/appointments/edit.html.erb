@@ -1,3 +1,29 @@
 <h2>Edit an Appointment:</h2>
 
-<%= render 'form' %>
+
+<%= form_for @appointment do |f| %>
+
+<strong><h2>
+  <%= current_user[:name]  %>
+</h2></strong>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
+<p> <%= f.label "Doctor:" %>
+    <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
+</p>
+<p>
+  <%= f.label "Appointment Type:" %>
+  <%= f.collection_select(:appointment_type_id, AppointmentType.all, :id, :name) %>
+</p>
+<p>
+  <%= f.label "Date:" %>
+  <%= f.date_field :appointment_date %>
+</p>
+<p>
+  <%= f.label "Notes:" %>
+  <%= f.text_area :note %>
+</p>
+  <%= f.submit 'Edit', :class=>'fade-btn' %>
+  <% end %>
+  <br>
+<p><%= link_to 'Back to Appointments', appointments_path, :class => 'fade-btn' %></p>

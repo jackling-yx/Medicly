@@ -1,3 +1,9 @@
+<% if flash[:authorized] %>
+      <p style="color: red;">
+        <%= flash[:authorized]%>
+      </p>
+<% end %>
+
 <h3>Name: <%= @user.name %></h3>
 
 <p><strong>Age: </strong><%= ((Time.zone.now - @user.birth_date.to_time) / 1.year.seconds).floor %></p>

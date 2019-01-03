@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap';
 
 body{
   background-color: #161D2B;
@@ -21,7 +22,7 @@ body{
 }
 
 p{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .logout{

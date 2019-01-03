@@ -11,15 +11,42 @@
   </head>
 
   <body>
+    <!-- Navigation Bar -->
 
+    <nav class="navbar navbar-expand-lg" style="background-color:#161d2b;">
+       <a class="navbar-brand" href="/home"><%= image_tag 'mediclylogo.png' %></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
 
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+           <li class="nav-item active">
+             <a class="nav-link" style="color:#f9f2dc;" href="">My Profile <span class="sr-only">(current)</span></a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" style="color:#f9f2dc;" href="#">Doctors</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" style="color:#f9f2dc;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Appointments
+             </a>
+             <div class="dropdown-menu" style="color:#161d2b;" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" style="color:#161d2b;" href="#">General Appointments</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="#">Vaccinations</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="#">Emergency</a>
+             </div>
+           </li>
+         </ul>
+         <% if session[:user_id] %>
+         <form class="form-inline my-2 my-lg-0">
+           <button class="btn btn-outline-success my-2 my-sm-0" a href="/logout">Logout</button>
+         </form>
+         <% end %>
+       </div>
+     </nav>
 
-    <!--    <ul  style="background-color:#F9F2DC; list-style-type:none; margin: 0; padding:0;">
-          <li style="float :left;"><a href="default.asp" style="text-decoration:none; color:#161D2B ;display: block; padding:8px; background-color:#F9F2DC">Profile</a></li>
-          <li style="float :left;"><a href="news.asp" style="text-decoration:none; color:#161D2B ;display: block; padding:8px; background-color:#F9F2DC">Doctors</a></li>
-          <li style="float :left;"><a href="contact.asp" style="text-decoration:none; color:#161D2B ;display: block; padding:8px; background-color:#F9F2DC">Appointments</a></li>
-        </ul> -->
-
+    <!-- End of Navigation Bar -->
 
     <div class="logout">
       <% if session[:user_id] %>
@@ -27,10 +54,11 @@
       <% end %>
     </div>
 
+
+
     <div class="responsive-table">
     <%= image_tag 'medicly.png', :size => '416x288' %><br>
-    <%= session %>
-    <%= session[:user_id] %>
+  
 
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
@@ -39,6 +67,7 @@
           </p>
         <% end %>
     <% end %>
+
     <%= yield %>
     </div>
   </body>

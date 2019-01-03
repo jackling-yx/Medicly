@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if authorized?
+    authorized_for(params[:id])
   end
 
   def create
@@ -26,9 +26,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    authorized_for(params[:id])
   end
 
   def update
+    authorized_for(params[:id])
     if @user.valid?
       @user.update(user_params)
       redirect_to user_path(@user)
@@ -39,6 +41,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    authorized_for(params[:id])
     @user.destroy
     redirect_to user_path
   end

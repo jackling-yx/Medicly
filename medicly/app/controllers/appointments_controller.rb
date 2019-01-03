@@ -7,15 +7,18 @@ class AppointmentsController < ApplicationController
     end
 
     def show
+      @doctor = @appointment.doctor
     end
 
     def new
       @appointment = Appointment.new
-      @user = User.find_by(session[:username])
+      @user = current_user
     end
 
     def create
+
       @appointment = Appointment.new(appointment_params)
+      @user = current_user
       if @appointment.valid?
         @appointment.save(appointment_params)
         redirect_to appointment_path(@appointment)
@@ -26,9 +29,11 @@ class AppointmentsController < ApplicationController
     end
 
     def edit
+      @user = current_user
     end
 
     def update
+      @user = current_user
       if @appointment.valid?
         @appointment.update(appointment_params)
         redirect_to appointment_path(@appointment)
@@ -50,10 +55,10 @@ class AppointmentsController < ApplicationController
     end
 
     def appointment_params
-      params.require(:appointment).permit(:doctor_id, :patient_id, :appointment_type_id, :note, :appointment_date)
+      params.require(:appointment).permit(:doctor_id, :user_id, :appointment_type_id, :note, :appointment_date)
     end
 
     def require_login
-      redirect_to sessions_new_path unless session.include?(:name)
+      redirect_to sessions_new_path unless session.include?(:user_id)
     end
 end
