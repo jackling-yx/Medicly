@@ -1,5 +1,5 @@
 <div class="responsive-table">
-<h3>General Appointments</h3>
+<h3>General Check-ups</h3>
 <br>
 <%  @appointments.each do |appointment| %>
   <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> |
