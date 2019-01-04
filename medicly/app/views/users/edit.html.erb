@@ -1,4 +1,7 @@
+<div class="responsive-table">
 <h2>Change your details here:</h2>
+
+<br>
 
 <%= form_for @user do |f| %>
   <p>
@@ -25,3 +28,7 @@
     <%= f.submit "Edit", :class=>'fade-btn' %>
   </p>
 <% end %>
+
+<p><%= link_to 'Back', user_path, :class=>'fade-btn' %></p>
+
+</div>

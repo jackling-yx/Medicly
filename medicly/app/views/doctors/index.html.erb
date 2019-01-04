@@ -1,8 +1,12 @@
-<h2>Doctors:</h2>
+<div class="responsive-table">
+
+<h2>Doctors</h2>
 
 <br>
   <% @doctors.each do |doctor| %>
   <p><%= link_to doctor.name, doctor_path(doctor) %> | <%= doctor.speciality.split.map(&:capitalize).join(' ') %></p>
   <% end %>
 <br>
-  <p><%= link_to 'Create a new Doctor', new_doctor_path, :class=>'fade-btn' %></p>
+  <p><%= link_to 'Add a new Doctor', new_doctor_path, :class=>'fade-btn' %></p>
+
+</div>

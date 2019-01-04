@@ -1,12 +1,13 @@
-<h4>Appointment with <%= @doctor.name %></h4>
-
+<div class="responsive-table">
+  <h4>Appointment with <%= @doctor.name %></h4>
+  <br>
   <p>For: <%= @user.name %> </p>
+  <p>At: <%= @appointment.appointment_date.strftime("%d %b %Y") %></p>
+  <p>Notes: <%= @appointment.note %></p>
 
-  <p>At: <%= @appointment.appointment_date %></p>
+<br>
 
-<h4>Notes from Appointment:</h4>
-<p><%= @appointment.note %></p>
+  <p><%= link_to 'Edit', edit_appointment_path, :class=>'fade-btn' %></p>
+  <p><%= link_to 'Back', appointments_path, :class=>'fade-btn' %></p>
 
-<p><%= link_to 'Edit this Appointment', edit_appointment_path, :class=>'fade-btn' %></p>
-
-<p><%= link_to 'Back to all Appointments', appointments_path, :class=>'fade-btn' %></p>
+</div>

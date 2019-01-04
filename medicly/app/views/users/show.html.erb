@@ -1,3 +1,5 @@
+<div class="responsive-table">
+
 <% if flash[:authorized] %>
       <p style="color: red;">
         <%= flash[:authorized]%>
@@ -7,13 +9,13 @@
 
 <h2><%= @user.name %></h2>
 <br>
-<p><strong>Age: </strong><%= ((Time.zone.now - @user.birth_date.to_time) / 1.year.seconds).floor %></p>
+<p><strong>Age | </strong><%= ((Time.zone.now - @user.birth_date.to_time) / 1.year.seconds).floor %></p>
 
-<p><strong>D.O.B: </strong> <%= @user.birth_date %></p>
+<p><strong>D.O.B | </strong> <%= @user.birth_date %></p>
 
-<p><strong>Gender: </strong> <%= @user.gender %></p>
+<p><strong>Gender | </strong> <%= @user.gender %></p>
 
-<p><strong>Allergies:</strong>
+<p><strong>Allergies |</strong>
   <% if @user.allergies.length > 0 %>
  <%= @user.allergies %></p>
   <% else %>
@@ -24,3 +26,4 @@
 <p><%= link_to 'Change your Details', edit_user_path, :class=>'fade-btn' %></p>
 
 <p><%= link_to 'Book an Appointment', new_appointment_path, :class=>'fade-btn' %></p>
+</div>

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
 #appointments management
-  get '/general-appointment' => 'appointments#general_appointment'
+  get '/general_appointment' => 'appointments#general_appointment'
   get '/vaccination', to: 'appointments#vaccination'
   get '/emergency' => 'appointments#emergency'
 

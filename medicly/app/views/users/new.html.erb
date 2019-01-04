@@ -1,4 +1,12 @@
-<h2>Sign up as a Patient:</h2>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#161d2b;">
+   <a class="navbar-brand" href="/home"><%= image_tag 'mediclylogo.png' %></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+</nav>
+<div class="responsive-table">
+
+<h2>Sign up</h2><br>
 
 <%= form_for @user, :url => '/signup' do |f| %>
   <p>
@@ -32,3 +40,5 @@
 <br>
 
   <p>Already have an account? <%= link_to "Login here", '/login', :class=>'fade-btn' %></p>
+
+</div>

@@ -1,4 +1,6 @@
-<h2>Your List of Appointments:</h2>
+<div class="responsive-table">
+<h2>Appointments</h2>
+<br>
 
 <% if @type == "general" %>
   <h3>general appoinments below</h3>
@@ -7,8 +9,7 @@
 <% @appointments.each do |appointment| %>
   <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> | <%= appointment.appointment_type.name %>
 <% end %>
-<br>
+<br><br>
 
-<p><%= link_to 'View Doctors', doctors_path, :class=>'fade-btn' %></p>
-
-<p><%= link_to 'Create a new Appointment', new_appointment_path, :class=>'fade-btn' %></p>
+<p><%= link_to 'Book an Appointment', new_appointment_path, :class=>'fade-btn' %></p>
+</div>

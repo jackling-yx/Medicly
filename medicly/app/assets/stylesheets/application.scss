@@ -19,19 +19,29 @@ body{
   background-color: #161D2B;
   color:#F9F2DC;
   font-family: 'Rubik', sans-serif;
+  min-height: 100%;
 }
 
 p{
   font-size: 16px;
 }
 
-.logout{
-  text-align: right;
+.home_page{
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
 }
 
 .responsive-table{
-  width: 100%;
-  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: 40%;
+  width: auto;
+}
+
+.logout{
+  text-align: right;
 }
 
 .fade-btn {

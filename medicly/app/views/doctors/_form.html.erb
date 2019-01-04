@@ -1,6 +1,6 @@
 <%= form_for @doctor do |f| %>
 
-<p>  <%= f.label "Dr:" %>
+<p>  <%= f.label "Doctor:" %>
   <%= f.text_field :name %>
 </p>
 <p>
@@ -15,5 +15,5 @@
   <%= f.submit 'Save', :class=>'fade-btn'%>
 </p>
   <% end %>
-<br>
-<%= link_to 'Back to All Doctors', doctors_path, :class=>'fade-btn' %>
+
+<p><%= link_to 'Back', doctors_path, :class=>'fade-btn' %></p>

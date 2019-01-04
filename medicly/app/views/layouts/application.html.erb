@@ -32,10 +32,10 @@
                Appointments
              </a>
              <div class="dropdown-menu" style="color:#161d2b;" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item" style="color:#161d2b;" href="/appointments">All Appointments</a>
                <a class="dropdown-item" style="color:#161d2b;" href="/appointments/new">Book an Appointment</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="/appointments">Appointments</a>
                <div class="dropdown-divider"></div>
-               <a class="dropdown-item" style="color:#161d2b;" href="/general-appointment" value="1">General Appointments</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="/general_appointment" value="1">General Appointments</a>
                <a class="dropdown-item" style="color:#161d2b;" href="/vaccination" value="2">Vaccinations</a>
                <a class="dropdown-item" style="color:#161d2b;" href="/emergency" value="3">Emergency</a>
              </div>
@@ -50,9 +50,6 @@
      </nav>
 
     <!-- End of Navigation Bar -->
-<br><br>
-    <div class="responsive-table">
-
 
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
@@ -63,6 +60,5 @@
     <% end %>
 
     <%= yield %>
-    </div>
   </body>
 </html>
