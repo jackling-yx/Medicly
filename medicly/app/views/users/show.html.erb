@@ -11,13 +11,13 @@
 <br>
 <p><strong>Age | </strong><%= ((Time.zone.now - @user.birth_date.to_time) / 1.year.seconds).floor %></p>
 
-<p><strong>D.O.B | </strong> <%= @user.birth_date %></p>
+<p><strong>D.O.B | </strong> <%= @user.birth_date.strftime("%d %b %Y") %></p>
 
-<p><strong>Gender | </strong> <%= @user.gender %></p>
+<p><strong>Gender | </strong> <%= @user.gender.capitalize %></p>
 
 <p><strong>Allergies |</strong>
   <% if @user.allergies.length > 0 %>
- <%= @user.allergies %></p>
+ <%= @user.allergies.capitalize %></p>
   <% else %>
   <%= "N/A" %>
   <% end %>

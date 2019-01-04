@@ -33,14 +33,14 @@ users = [
 users.each {|user| User. create(user)}
 
 appointments = [
-  {doctor_id: 2, user_id: 3, appointment_type_id: 1, note: "Diagnosis: Mild Flu and Chest Infection", appointment_date: "2018-10-22"},
-  {doctor_id: 4, user_id: 7, appointment_type_id: 2, note: "Vaccine: MMR", appointment_date: "2017-09-18"},
+  {doctor_id: 2, user_id: 1, appointment_type_id: 1, note: "Diagnosis: Mild Flu and Chest Infection", appointment_date: "2018-10-22"},
+  {doctor_id: 4, user_id: 2, appointment_type_id: 2, note: "Vaccine: MMR", appointment_date: "2017-09-18"},
   {doctor_id: 6, user_id: 3, appointment_type_id: 1, note: "Diagnosis: Period cramp and pain in lower back", appointment_date: "2018-03-05"},
-  {doctor_id: 3, user_id: 5, appointment_type_id: 3, note: "Emergency: Displaced shoulder", appointment_date: "2014-11-28"},
+  {doctor_id: 3, user_id: 2, appointment_type_id: 3, note: "Emergency: Displaced shoulder", appointment_date: "2014-11-28"},
   {doctor_id: 6, user_id: 1, appointment_type_id: 1, note: "Diagnosis: Twisted ankle", appointment_date: "2017-08-09"},
-  {doctor_id: 4, user_id: 8, appointment_type_id: 3, note: "Emergency: Asthma attack due to nut allergic reaction", appointment_date: "2016-04-18"},
-  {doctor_id: 5, user_id: 5, appointment_type_id: 1, note: "Diagnosis: Mild UTI", appointment_date: "2018-04-15"},
-  {doctor_id: 1, user_id: 4, appointment_type_id: 2, note: "Vaccine: Chickenpox", appointment_date: "2017-06-02"},
+  {doctor_id: 4, user_id: 3, appointment_type_id: 3, note: "Emergency: Asthma attack due to nut allergic reaction", appointment_date: "2016-04-18"},
+  {doctor_id: 5, user_id: 1, appointment_type_id: 1, note: "Diagnosis: Mild UTI", appointment_date: "2018-04-15"},
+  {doctor_id: 1, user_id: 2, appointment_type_id: 2, note: "Vaccine: Chickenpox", appointment_date: "2017-06-02"},
   {doctor_id: 9, user_id: 3, appointment_type_id: 2, note: "Vaccine: Flu", appointment_date: "2018-03-27"},
   {doctor_id: 3, user_id: 2, appointment_type_id: 1, note: "Diagnosis: Nausea and dizziness due to low blood pressure", appointment_date: "2018-05-08"}
 ]

@@ -6,8 +6,8 @@
   <h3>general appoinments below</h3>
 
 <% end %>
-<% @appointments.each do |appointment| %>
-  <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> | <%= appointment.appointment_type.name %>
+  <% @appointments.each do |appointment| %>
+  <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> | <%= appointment.appointment_type.name %></p>
 <% end %>
 <br><br>
 

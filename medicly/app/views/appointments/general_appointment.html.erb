@@ -2,7 +2,12 @@
 <h3>General Appointments</h3>
 <br>
 <%  @appointments.each do |appointment| %>
-  <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> | <%= appointment.note %></p>
+  <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> |
+    <% if appointment.note.length > 0 %>
+      <%= appointment.note %>
+    <% else %>
+      <%= "N/A" %>
+    <% end %></p>
 <% end %>
 <br>
 <p><%= link_to 'View Doctors', doctors_path, :class=>'fade-btn' %></p>
