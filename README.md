@@ -7,6 +7,8 @@ Medicly was a project by Janine Luk ([ja9-look](https://github.com/ja9-look)), K
 
 This app was created using Ruby on Rails, to provide users a convenient place to keep track of all their medical records.
 
+Video Demo: https://youtu.be/5PT-07Cb8og
+
 ### MVP
 
 We wanted our app to fulfil the following:
