@@ -7,7 +7,7 @@
 
   <%= f.hidden_field :user_id, value: @user.id %>
 <p> <%= f.label "Doctor:" %>
-    <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
+    <%= f.collection_select(:doctor_id, Doctor.all, :id, :name, {:include_blank => true}, {:class => "form-control"}) %>
 </p>
 <p>
   <%= f.label "Appointment Type:" %>

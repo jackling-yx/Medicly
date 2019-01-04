@@ -1,8 +1,11 @@
 <h2>Your List of Appointments:</h2>
 
+<% if @type == "general" %>
+  <h3>general appoinments below</h3>
 
+<% end %>
 <% @appointments.each do |appointment| %>
-  <p><%= appointment.appointment_type.name %> | <%= link_to appointment.appointment_date, appointment_path(appointment) %></p>
+  <p><%= link_to appointment.appointment_date.strftime("%d %b %Y"), appointment_path(appointment) %> | <%= appointment.appointment_type.name %>
 <% end %>
 <br>
 

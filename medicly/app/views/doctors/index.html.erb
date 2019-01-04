@@ -1,10 +1,8 @@
-<h2>Your List of Doctors:</h2>
+<h2>Doctors:</h2>
 
-<p><%= link_to 'Create a new Doctor', new_doctor_path, :class=>'fade-btn' %></p>
-
+<br>
   <% @doctors.each do |doctor| %>
-  <p><%= link_to doctor.name, doctor_path(doctor) %></p>
+  <p><%= link_to doctor.name, doctor_path(doctor) %> | <%= doctor.speciality.split.map(&:capitalize).join(' ') %></p>
   <% end %>
-
-
-  <p><%= link_to 'View Your Appointments', appointments_path, :class=>'fade-btn' %></p>
+<br>
+  <p><%= link_to 'Create a new Doctor', new_doctor_path, :class=>'fade-btn' %></p>

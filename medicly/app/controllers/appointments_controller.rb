@@ -4,7 +4,26 @@ class AppointmentsController < ApplicationController
   before_action :require_login
 
     def index
-      @appointments = Appointment.where(user_id: current_user.id)
+      @type = params[:value]
+      if params[:appointment_type_id]
+        @appointments = Appointment.where(user_id: current_user.id, appointment_type_id: @type)
+      else
+        @appointments = Appointment.where(user_id: current_user.id)
+      end
+    end
+
+    def general_appointment
+      @appointments = Appointment.where(user_id: current_user.id, appointment_type_id: 1)
+    end
+
+    def vaccination
+      # @appointment = Appointment.find(params[:id])
+      # authorized_for(@appointment)
+      @appointments = Appointment.where(user_id: current_user.id, appointment_type_id: 2)
+    end
+
+    def emergency
+      @appointments = Appointment.where(user_id: current_user.id, appointment_type_id: 3)
     end
 
     def show
@@ -26,7 +45,7 @@ class AppointmentsController < ApplicationController
         @user = current_user
           if @appointment.valid?
             @appointment.save(appointment_params)
-            redirect_to appointment_path(@appointment)
+            redirect_to appointments_path
           else
             flash[:errors] = @appointment.errors.full_messages
             render :new

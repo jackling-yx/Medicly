@@ -12,7 +12,7 @@
 
   <body>
     <!-- Navigation Bar -->
-
+    <% if session[:user_id] %>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#161d2b;">
        <a class="navbar-brand" href="/home"><%= image_tag 'mediclylogo.png' %></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,14 +33,15 @@
              </a>
              <div class="dropdown-menu" style="color:#161d2b;" aria-labelledby="navbarDropdown">
                <a class="dropdown-item" style="color:#161d2b;" href="/appointments">All Appointments</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="/appointments/new">Book an Appointment</a>
                <div class="dropdown-divider"></div>
-               <a class="dropdown-item" style="color:#161d2b;" href="#">General Appointments</a>
-               <a class="dropdown-item" style="color:#161d2b;" href="#">Vaccinations</a>
-               <a class="dropdown-item" style="color:#161d2b;" href="#">Emergency</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="/general-appointment" value="1">General Appointments</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="/vaccination" value="2">Vaccinations</a>
+               <a class="dropdown-item" style="color:#161d2b;" href="/emergency" value="3">Emergency</a>
              </div>
            </li>
          </ul>
-         <% if session[:user_id] %>
+
          <div class="logout">
            <%= button_to 'Log Out', logout_path, :class => "fade-btn" %>
          </div>
@@ -49,7 +50,7 @@
      </nav>
 
     <!-- End of Navigation Bar -->
-<br><br><br><br><br>
+<br><br>
     <div class="responsive-table">
 
 

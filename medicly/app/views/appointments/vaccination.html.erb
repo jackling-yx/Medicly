@@ -1,0 +1,8 @@
+<h3>Vaccinations:</h3>
+<%  @appointments.each do |appointment| %>
+  <p><%= link_to appointment.appointment_date, appointment_path(appointment) %> | <%= appointment.note %></p>
+<% end %>
+
+<p><%= link_to 'View Doctors', doctors_path, :class=>'fade-btn' %></p>
+
+<p><%= link_to 'Create a new Appointment', new_appointment_path, :class=>'fade-btn' %></p>

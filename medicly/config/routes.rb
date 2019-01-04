@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
 #appointments management
-  get '/general-appointment' => 'appointments#show'
-  get '/vaccination' => 'appointments#show'
-  get '/emergency' => 'appointments#show'
+  get '/general-appointment' => 'appointments#general_appointment'
+  get '/vaccination', to: 'appointments#vaccination'
+  get '/emergency' => 'appointments#emergency'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

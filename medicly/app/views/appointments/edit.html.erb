@@ -26,4 +26,7 @@
   <%= f.submit 'Edit', :class=>'fade-btn' %>
   <% end %>
   <br>
+
+<p><%= link_to 'Delete', appointment_path, method: :delete, data: {confirm: "Are you sure you want to delete this appointment?"}, :class=>'fade-btn' %></p>
+
 <p><%= link_to 'Back to Appointments', appointments_path, :class => 'fade-btn' %></p>

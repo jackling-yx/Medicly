@@ -6,7 +6,7 @@ class DoctorsController < ApplicationController
     end
 
     def show
-      authorized_for(@doctor)
+      # authorized_for(@doctor)
     end
 
     def new
