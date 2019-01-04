@@ -1,5 +1,5 @@
 
-# Medicly - Your health in your hands.
+# 🏥 Medicly - Your health in your hands 🏥
 
 ## About
 
